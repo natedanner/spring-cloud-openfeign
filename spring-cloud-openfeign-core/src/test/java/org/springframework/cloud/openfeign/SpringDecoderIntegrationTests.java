@@ -61,7 +61,7 @@ class SpringDecoderIntegrationTests extends FeignClientFactoryBean {
 	FeignClientFactory context;
 
 	@LocalServerPort
-	private int port = 0;
+	private int port;
 
 	SpringDecoderIntegrationTests() {
 		setName("test");

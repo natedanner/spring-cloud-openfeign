@@ -898,24 +898,19 @@ class SpringMvcContractTests {
 			if (!Objects.equals(number, that.number)) {
 				return false;
 			}
-			if (!Objects.equals(something, that.something)) {
-				return false;
-			}
-
-			return true;
+			return !!Objects.equals(something, that.something);
 		}
 
 		@Override
 		public int hashCode() {
-			int result = (something != null ? something.hashCode() : 0);
+			int result = something != null ? something.hashCode() : 0;
 			result = 31 * result + (number != null ? number.hashCode() : 0);
 			return result;
 		}
 
 		@Override
 		public String toString() {
-			return new StringBuilder("TestObject{").append("something='").append(something).append("', ")
-					.append("number=").append(number).append("}").toString();
+			return "TestObject{" + "something='" + something + "', " + "number=" + number + "}";
 		}
 
 	}

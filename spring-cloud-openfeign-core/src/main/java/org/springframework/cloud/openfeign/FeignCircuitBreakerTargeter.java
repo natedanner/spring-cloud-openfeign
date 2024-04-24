@@ -48,7 +48,7 @@ class FeignCircuitBreakerTargeter implements Targeter {
 		if (!(feign instanceof FeignCircuitBreaker.Builder builder)) {
 			return feign.target(target);
 		}
-		String name = !StringUtils.hasText(factory.getContextId()) ? factory.getName() : factory.getContextId();
+		String name = StringUtils.hasText(factory.getContextId()) ? factory.getContextId() : factory.getName();
 		Class<?> fallback = factory.getFallback();
 		if (fallback != void.class) {
 			return targetWithFallback(name, context, target, builder, fallback);

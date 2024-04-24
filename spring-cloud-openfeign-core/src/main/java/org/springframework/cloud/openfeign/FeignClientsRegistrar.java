@@ -435,7 +435,7 @@ class FeignClientsRegistrar implements ImportBeanDefinitionRegistrar, ResourceLo
 		if (qualifierList.isEmpty() && getQualifier(client) != null) {
 			qualifierList = Collections.singletonList(getQualifier(client));
 		}
-		return !qualifierList.isEmpty() ? qualifierList.toArray(new String[0]) : null;
+		return qualifierList.isEmpty() ? null : qualifierList.toArray(new String[0]);
 	}
 
 	private String getClientName(Map<String, Object> client) {

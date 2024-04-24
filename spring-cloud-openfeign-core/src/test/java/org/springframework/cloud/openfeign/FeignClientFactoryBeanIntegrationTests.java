@@ -146,7 +146,7 @@ class FeignClientFactoryBeanIntegrationTests {
 	static class TestClientAConfiguration {
 
 		@LocalServerPort
-		private int port = 0;
+		private int port;
 
 		@Bean
 		public ServiceInstanceListSupplier testClientAServiceInstanceListSupplier() {
@@ -160,7 +160,7 @@ class FeignClientFactoryBeanIntegrationTests {
 	static class TestClientBConfiguration {
 
 		@LocalServerPort
-		private int port = 0;
+		private int port;
 
 		@Bean
 		public ServiceInstanceListSupplier testClientBServiceInstanceListSupplier() {
