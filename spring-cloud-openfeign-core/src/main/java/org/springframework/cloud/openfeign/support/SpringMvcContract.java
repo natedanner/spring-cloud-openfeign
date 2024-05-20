@@ -497,12 +497,12 @@ public class SpringMvcContract extends Contract.BaseContract implements Resource
 			int separator = expression.indexOf('=');
 			if (separator == -1) {
 				isNegated = expression.startsWith("!");
-				name = (isNegated ? expression.substring(1) : expression);
+				name = isNegated ? expression.substring(1) : expression;
 				value = null;
 			}
 			else {
 				isNegated = (separator > 0) && (expression.charAt(separator - 1) == '!');
-				name = (isNegated ? expression.substring(0, separator - 1) : expression.substring(0, separator));
+				name = isNegated ? expression.substring(0, separator - 1) : expression.substring(0, separator);
 				value = expression.substring(separator + 1);
 			}
 		}
